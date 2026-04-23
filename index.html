@@ -16,14 +16,15 @@
 
 <body>
 
+  <!-- ══════════ FLOATING PARTICLES ══════════ -->
+  <canvas id="particles-canvas"></canvas>
+
   <!-- ══════════ NAVBAR ══════════ -->
   <nav>
     <div class="D">
       <img src="img/kk.png" alt="Digbijay">
       <h1>DIGBIJAY</h1>
     </div>
-
-    <!-- Desktop links — visible > 900px -->
     <div class="sticky_nav_options">
       <a href="#home" class="badge">HOME</a>
       <a href="#about" class="badge">ABOUT</a>
@@ -31,12 +32,8 @@
       <a href="#contact" class="badge">CONTACT</a>
       <a href="mailto:pramanikd45@gmail.com" class="badge hire">HIRE ME</a>
     </div>
-
-    <!-- Hamburger — visible < 900px -->
     <button class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
@@ -51,8 +48,14 @@
 
   <!-- ══════════ HERO ══════════ -->
   <section class="main_content" id="home">
-    <h1 class="bg-text">DIGBIJAY</h1>
-    <div class="mainn">
+    <h1 class="bg-text" id="bgText">DIGBIJAY</h1>
+
+    <!-- 3D floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="mainn" id="heroContent">
       <div class="hh">
         <div class="hero-tag">Available for work</div>
         <h1>Hello 👋, I'm<br><span class="name-gradient">Digbijay Pramanik</span></h1>
@@ -72,14 +75,27 @@
           <span class="skill-chip">Responsive Design</span>
         </div>
       </div>
-      <div class="img-wrap">
+      <div class="img-wrap" id="heroImg">
         <div class="circle-bg"></div>
+        <!-- 3D rotating ring -->
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
         <img src="img/oo.png" alt="Profile">
         <div class="img-badge">
           <div class="badge-num">2+</div>
           <div class="badge-label">Years Coding</div>
         </div>
+        <!-- floating tech badges -->
+        <div class="float-badge fb-1"><i class="fa-brands fa-js"></i> JS</div>
+        <div class="float-badge fb-2"><i class="fa-brands fa-python"></i> PY</div>
+        <div class="float-badge fb-3"><i class="fa-brands fa-html5"></i> HTML</div>
       </div>
+    </div>
+
+    <!-- scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
     </div>
   </section>
 
@@ -119,15 +135,50 @@
         <p>I have hands-on experience with HTML, CSS, JavaScript, Python, and C/C++. I enjoy building modern,
           responsive, and visually appealing websites. I consider myself a continuous learner, always exploring new
           technologies and improving my skills through practice and real projects.</p>
+
+        <!-- 3D skill bars -->
+        <div class="skill-bars reveal">
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>HTML / CSS</span><span>90%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>JavaScript</span><span>75%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>Python</span><span>70%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-label"><span>C / C++</span><span>65%</span></div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+          </div>
+        </div>
       </div>
-      <div class="about-card reveal">
-        <div class="about-card-row"><span class="key">Name</span><span class="val">Digbijay Pramanik</span></div>
-        <div class="about-card-row"><span class="key">University</span><span class="val">Raiganj University</span></div>
-        <div class="about-card-row"><span class="key">Degree</span><span class="val">BCA, 2nd Year</span></div>
-        <div class="about-card-row"><span class="key">Status</span><span class="val"><span class="status-dot">●</span>
-            Available</span></div>
-        <div class="about-card-row"><span class="key">Email</span><span class="val"
-            style="font-size:0.75rem">pramanikd45@gmail.com</span></div>
+
+      <!-- 3D flip card -->
+      <div class="card-3d-wrap reveal" id="aboutCard3D">
+        <div class="card-3d-inner">
+          <!-- FRONT -->
+          <div class="card-3d-front about-card">
+            <div class="card-3d-hint">Hover to flip ↻</div>
+            <div class="about-card-row"><span class="key">Name</span><span class="val">Digbijay Pramanik</span></div>
+            <div class="about-card-row"><span class="key">University</span><span class="val">Raiganj University</span></div>
+            <div class="about-card-row"><span class="key">Degree</span><span class="val">BCA, 2nd Year</span></div>
+            <div class="about-card-row"><span class="key">Status</span><span class="val"><span class="status-dot">●</span> Available</span></div>
+            <div class="about-card-row"><span class="key">Email</span><span class="val" style="font-size:0.75rem">pramanikd45@gmail.com</span></div>
+          </div>
+          <!-- BACK -->
+          <div class="card-3d-back about-card">
+            <div class="card-back-title">Quick Facts</div>
+            <div class="fact-item"><span class="fact-icon">🎯</span><span>Goal: Full-Stack Developer</span></div>
+            <div class="fact-item"><span class="fact-icon">📍</span><span>West Bengal, India</span></div>
+            <div class="fact-item"><span class="fact-icon">🎓</span><span>2nd Year BCA Student</span></div>
+            <div class="fact-item"><span class="fact-icon">💻</span><span>2+ Years Coding</span></div>
+            <div class="fact-item"><span class="fact-icon">🚀</span><span>Open to opportunities</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -137,13 +188,12 @@
     <div class="porto-header reveal">
       <div>
         <div class="section-label">My Work</div>
-        <h1
-          style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-1px;color:var(--white);">
-          Selected Projects.</h1>
+        <h1 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-1px;color:var(--white);">Selected Projects.</h1>
       </div>
     </div>
     <div class="projects-grid">
-      <div class="project-card reveal">
+      <div class="project-card tilt-card reveal">
+        <div class="tilt-shine"></div>
         <div class="project-img">
           <img src="img/ss.webp" alt="Spotify Clone">
           <div class="project-overlay">
@@ -153,7 +203,8 @@
           </div>
         </div>
       </div>
-      <div class="project-card reveal">
+      <div class="project-card tilt-card reveal">
+        <div class="tilt-shine"></div>
         <div class="project-img">
           <img src="img/a.jpg" alt="Anime List">
           <div class="project-overlay">
@@ -163,9 +214,10 @@
           </div>
         </div>
       </div>
-      <div class="project-card reveal">
+      <div class="project-card tilt-card reveal">
+        <div class="tilt-shine"></div>
         <div class="project-img">
-          <img src="img/Captcha.png" alt="Project 3"
+          <img src="img/Captcha.png" alt="Captcha Generator"
             onerror="this.parentElement.style.background='#13111f'; this.style.display='none'">
           <div class="project-overlay">
             <h3>Captcha Generator</h3>
@@ -173,17 +225,17 @@
           </div>
         </div>
       </div>
-      <div class="project-card reveal">
+      <div class="project-card tilt-card reveal coming-soon-card">
+        <div class="tilt-shine"></div>
         <div class="project-img">
-          <img src="" alt="Project 3"
-            onerror="this.parentElement.style.background='#13111f'; this.style.display='none'">
-          <div class="project-overlay">
-            <h3>Coming soon</h3>
-            <!-- <a href="" target="_blank">Visit Site ↗</a> -->
+          <div class="coming-soon-inner">
+            <div class="cs-icon">🚀</div>
+            <h3>Coming Soon</h3>
             <p>Next project in the works</p>
           </div>
         </div>
       </div>
+    </div>
   </section>
 
   <!-- ══════════ CONTACT ══════════ -->
@@ -194,14 +246,16 @@
     </div>
     <div class="both">
       <div class="log reveal">
-        <a href="mailto:pramanikd45@gmail.com" class="contact-link-card">
+        <a href="mailto:pramanikd45@gmail.com" class="contact-link-card tilt-card">
+          <div class="tilt-shine"></div>
           <div class="icon"><i class="fa-solid fa-envelope"></i></div>
           <div class="link-text">
             <div class="label">Email</div>
             <div class="val">pramanikd45@gmail.com</div>
           </div>
         </a>
-        <a href="tel:+919635426394" class="contact-link-card">
+        <a href="tel:+919635426394" class="contact-link-card tilt-card">
+          <div class="tilt-shine"></div>
           <div class="icon"><i class="fa-solid fa-phone"></i></div>
           <div class="link-text">
             <div class="label">Phone</div>
@@ -209,12 +263,9 @@
           </div>
         </a>
         <div class="social-row">
-          <a href="https://www.instagram.com/sincossectan_catchmeifucan__fr" target="_blank" class="social-btn"><i
-              class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.facebook.com/share/1W46Q1F4fm/" target="_blank" class="social-btn"><i
-              class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.linkedin.com/in/digbijay-pramanik-344653315" target="_blank" class="social-btn"><i
-              class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/sincossectan_catchmeifucan__fr" target="_blank" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1W46Q1F4fm/" target="_blank" class="social-btn"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/in/digbijay-pramanik-344653315" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin"></i></a>
           <a href="#" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
         </div>
         <button class="cv-btn"><i class="fa-solid fa-download"></i> Download CV</button>
@@ -222,15 +273,11 @@
       <div class="desc reveal">
         <form onsubmit="handleSubmit(event)">
           <div class="form-row">
-            <div class="form-group"><label class="form-label">Name</label><input type="text" class="t"
-                placeholder="Your name" required></div>
-            <div class="form-group"><label class="form-label">Email</label><input type="email" class="e"
-                placeholder="your@email.com" required></div>
+            <div class="form-group"><label class="form-label">Name</label><input type="text" class="t" placeholder="Your name" required></div>
+            <div class="form-group"><label class="form-label">Email</label><input type="email" class="e" placeholder="your@email.com" required></div>
           </div>
-          <div class="form-group"><label class="form-label">Subject</label><input type="text" class="s"
-              placeholder="What's this about?"></div>
-          <div class="form-group"><label class="form-label">Message</label><textarea class="m"
-              placeholder="Your message..." required></textarea></div>
+          <div class="form-group"><label class="form-label">Subject</label><input type="text" class="s" placeholder="What's this about?"></div>
+          <div class="form-group"><label class="form-label">Message</label><textarea class="m" placeholder="Your message..." required></textarea></div>
           <button type="submit" class="submit-btn">Send Message →</button>
         </form>
       </div>
@@ -250,5 +297,4 @@
 
   <script src="script.js"></script>
 </body>
-
 </html>
